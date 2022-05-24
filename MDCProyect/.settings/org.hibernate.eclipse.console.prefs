@@ -1,7 +1,0 @@
-<<<<<<< Updated upstream
-default.configuration=MDCProyect
-=======
-default.configuration=com.example
->>>>>>> Stashed changes
-eclipse.preferences.version=1
-hibernate3.enabled=true
