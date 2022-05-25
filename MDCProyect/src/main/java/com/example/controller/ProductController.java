@@ -29,6 +29,18 @@ public class ProductController {
 	public String DetailProducto(@PathVariable("id")Long id , Model model) {
 		model.addAttribute("product", productService.getById(id));
 	    return "product";
-	} 
-    
+	}
+
+	@GetMapping("/delete/{id}")
+	public String DeleteProducto(@PathVariable("id")Long id, Model model) {
+		try {
+			if(productService.getById(id) != null){
+				model.addAttribute("delete", productService.delete(id));
+			}
+			else throw new Exception("Elemento no existe");
+		}catch (Exception e){
+			model.addAttribute("delete", "Error al eliminar el producto id:"+id.toString());
+		}
+		return "delete";
+	}
 }
