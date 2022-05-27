@@ -34,7 +34,7 @@ public class Purchase implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "User_id", nullable = false)
-    private User user;
+    private Users user;
 
     public Long getId() {
         return id;
@@ -63,13 +63,12 @@ public class Purchase implements Serializable {
         return this;
     }
 
-    public User getUser() {
-        return user;
-    }
+	public Users getUser() {
+		return user;
+	}
 
-    public Purchase setUser(User user) {
-        this.user = user;
-        return this;
-    }
-    
+	public void setUser(Users user) {
+		this.user = user;
+	}
+
 }
