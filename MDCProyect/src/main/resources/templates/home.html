@@ -8,29 +8,26 @@
 
 	<main>
 		<div class="container123">
-			<form th:action="@{/home/buscarProductos}" method="post"
-				th:object="${productBusqueda}" enctype="multipart/form-data">
-				<input type="text" th:field="*{name}" class="form-control"
-					id="fname"></input>
-				<button type="submit" class="btn btn-primary">Buscar</button>
-			</form>
 			<div class="c-1">
 				<div class="auxc-1">
 					<div th:each="item: ${products}">
-
-						<a href="purchase.xhtml"> <img th:src="${item.url}"
-							alt="Imagen 1" style="height: 320px;" />
-						</a>
-						<div>
-							<h3 th:text="${item.name}"></h3>
-							<h3 th:text="'Precio: S/.'+${item.price}"></h3>
-							<h3 th:text="'Marca: '+${item.brand}"></h3>
-							<h3 th:text="'Genero: '+${item.gen}"></h3>
-						</div>
-						<br></br> <a th:href="@{'/product/details/' + ${item.id} }"
-							class="btn btn-primary">Detalle</a> <br></br> <br></br>
-
-
+						<form class="flogin" action="#">
+				
+                                <a href="purchase.xhtml"> 
+                               	 <img th:src="${item.url}"  alt="Imagen 1" style="height: 320px;" />
+                                </a>
+                                <div>
+                                    <h3 th:text="${item.name}"></h3>
+                                    <h3 th:text="'Precio: S/.'+${item.price}"></h3>
+                                    <h3 th:text="'Marca:'+${item.brand}"></h3>
+                                    <h3 th:text="'Genero: '+${item.gen}"></h3>
+                                </div>
+                                <br></br>
+                                <a th:href="@{'/product/details/' + ${item.id} }" class="btn btn-primary">Detalle</a>
+   
+                                <br></br>
+                                <br></br>
+						</form>
 					</div>
 				</div>
 			</div>

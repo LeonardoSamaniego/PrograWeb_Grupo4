@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout/layout :: head(~{::title})">
-<title>My Closet</title>
+<title>My Products</title>
 </head>
     <link rel="stylesheet" href="/recursos/CSS/closet.style.css"></link>
 <body>
@@ -18,25 +18,13 @@
 				<br></br>
 				<form>
 					<table class="table table-bordered">
-							<thead>
-							<tr>
-								<th class="text-center">Producto</th>
-								<th class="text-center">Precio</th>
-								<th class="text-center">Operacion</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="p: ${myProducts}">
-								<td th:text="${p.product.name}"></td>
-								<td th:text="${p.product.price}"></td>
-								<td><a th:href="@{'/myProducts/delete/' + ${p.idMyProduct}}">Eliminar</a></td>
-
-
-							</tr>
-						</tbody>
+						<tr>
+							<th>Product</th>
+							<th>Price</th>
+						</tr>
 					</table>
 
-					<a class="btn btn-secondary" th:href="@{/purchase/buy}">Comprar</a>
+					<button type="submit" class="btn btn-primary btn-lg">Comprar</button>
 
 				</form>
 			</div>
