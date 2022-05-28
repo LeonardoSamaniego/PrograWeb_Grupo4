@@ -28,6 +28,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+>>>>>>> Stashed changes
 =======
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 >>>>>>> Stashed changes
@@ -55,7 +59,10 @@
 	</classpathentry>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
