@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<title>My Products</title>
+</head>
+    <link rel="stylesheet" href="/recursos/CSS/closet.style.css"></link>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<main>
+		<div class="wrapper">
+			<div>
+				<img class="img" src="/recursos/Imagenes/6.png" alt="ropa" />
+				<p class="text">Arma tu outfit</p>
+			</div>
+
+			<div class="wrapper-closet">
+				<br></br>
+				<form>
+					<table class="table table-bordered">
+						<tr>
+							<th>Product</th>
+							<th>Price</th>
+						</tr>
+					</table>
+
+						<button type="submit" class="btn btn-primary btn-lg">Comprar</button>
+
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
