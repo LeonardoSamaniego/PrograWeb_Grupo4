@@ -17,11 +17,14 @@
 		</buildCommand>
 		<buildCommand>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 			<name>org.hibernate.eclipse.console.hibernateBuilder</name>
@@ -49,12 +52,18 @@
 			</arguments>
 		</buildCommand>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 		<buildCommand>
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	</buildSpec>
 	<natures>
