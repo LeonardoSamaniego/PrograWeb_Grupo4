@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <wb-module deploy-name="com.example">
-        <wb-resource deploy-path="/" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/" source-path="/src/test/java"/>
-        <wb-resource deploy-path="/" source-path="/target/generated-sources/annotations"/>
-        <wb-resource deploy-path="/" source-path="/target/generated-test-sources/test-annotations"/>
-    </wb-module>
-=======
-=======
->>>>>>> Stashed changes
                 
     
     
@@ -22,26 +9,9 @@
         <wb-resource deploy-path="/" source-path="/src/main/java"/>
                                 
         
-<<<<<<< Updated upstream
-=======
-            
-    
-    <wb-module deploy-name="com.example">
-                        
-        
-        <wb-resource deploy-path="/" source-path="/src/main/java"/>
-                        
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         
         <wb-resource deploy-path="/" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/" source-path="/target/generated-sources/annotations"/>
-        <wb-resource deploy-path="/" source-path="/target/generated-test-sources/test-annotations"/>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
+        <wb-resource deploy-path="/" source-path="/src/test/java"/>
                             
     
     
@@ -49,15 +19,4 @@
             
 
 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-                    
-    
-    </wb-module>
-        
-
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 </project-modules>
