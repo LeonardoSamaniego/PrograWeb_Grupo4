@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<title>Add Product</title>
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container-fluid">
+		<form class="sigin" th:action="@{/user/saveNewProduct}" method="post" th:object="${product}" >
+			<h1>New product</h1>
+			<div class="row">
+				<div class="col-8" style="padding: 70px;">
+					<div class="row">
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Brand</h3>
+								<input type="text"
+									   class="form-control" required th:field="*{brand}" >
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Cate</h3>
+								<select th:field="*{cate}">
+									<option th:value="'CONJUNTO'" th:text="CONJUNTO"></option>
+									<option th:value="'PANTALÓN'" th:text="PANTALÓN"></option>
+									<option th:value="'POLO'" th:text="POLO"></option>
+									<option th:value="'CASACA'" th:text="CASACA"></option>
+									<option th:value="'CAMISA'" th:text="CAMISA"></option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Gen</h3>
+								<input type="text"
+									   class="form-control" required th:field="*{gen}" >
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Name</h3>
+								<input type="text"
+									   class="form-control" required th:field="*{name}" >
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Price</h3>
+								<input type="number"
+									   class="form-control" required th:field="*{price}" >
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Size</h3>
+								<input type="text"
+									   class="form-control" required th:field="*{size}" >
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Type</h3>
+								<input type="text"
+									   class="form-control" required th:field="*{type}" >
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Color</h3>
+								<input type="text"
+									   class="form-control" required th:field="*{color}" >
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<div class="form-group">
+								<h3>Image URL</h3>
+								<input type="text"
+									   class="form-control" required th:field="*{url}" >
+							</div>
+						</div>
+					</div>
+
+					<hr style="border: 2px solid black;" />
+					<div class="row">
+						<button type="submit" class="btn btn-primary">Add</button>
+					</div>
+				</div>
+
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
