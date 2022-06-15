@@ -9,6 +9,8 @@ import com.example.entities.MyProduct;
 
 @Repository
 public interface MyProductRepository extends JpaRepository<MyProduct, Long> {
+	
 	List<MyProduct> findByUserId(Long id);
+	
 	void deleteByUserId(long id);
 }

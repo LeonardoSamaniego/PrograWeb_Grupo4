@@ -3,7 +3,7 @@
 <head th:replace="layout/layout :: head(~{::title})">
 <title>My Closet</title>
 </head>
-    <link rel="stylesheet" href="/recursos/CSS/closet.style.css"></link>
+<link rel="stylesheet" href="/recursos/CSS/closet.style.css"></link>
 <body>
 	<header th:replace="layout/layout :: header"></header>
 
@@ -16,27 +16,45 @@
 
 			<div class="wrapper-closet">
 				<br></br>
-				<form>
-					<table class="table table-bordered">
-							<thead>
-							<tr>
-								<th class="text-center">Producto</th>
-								<th class="text-center">Precio</th>
-								<th class="text-center">Operacion</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="p: ${myProducts}">
-								<td th:text="${p.product.name}"></td>
-								<td th:text="${p.product.price}"></td>
-								<td><a th:href="@{'/myProducts/delete/' + ${p.idMyProduct}}">Eliminar</a></td>
+
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th class="text-center">Producto</th>
+							<th class="text-center">Cantidad</th>
+							<th class="text-center">Precio Unit.</th>
+							<th class="text-center">Subtotal</th>
+							<th class="text-center">Operacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="p: ${myProducts}">
+							<td th:text="${p.product.name}"></td>
+							<td th:text="${p.quantity}"></td>
+							<td th:text="${p.product.price}"></td>
+							<td th:text="${p.subtotal}"></td>
+							<td><a th:href="@{'/myProducts/delete/' + ${p.idMyProduct}}">Eliminar</a></td>
+						</tr>
+					</tbody>
+				</table>
 
 
-							</tr>
-						</tbody>
-					</table>
+				<label>Total: </label> <label th:text="${total}"></label> <br>
+				<br>
 
-					<a class="btn btn-secondary" th:href="@{/purchase/buy}">Comprar</a>
+				<form th:action="@{/purchase/buy}" method="post"
+					th:object="${purchase}">
+					<div style="padding-left: 100px; padding-right: 100px">
+					<label>Tarjeta para la compra: </label>
+					<select class="form-control" th:field="*{card}">
+
+						<option th:each="c: ${cards}" th:value="${c.idCard}"
+							th:text="${c.numberCard}"
+							th:selected="(${c.idCard} == *{card.idCard})"></option>
+					</select>
+
+					<button type="submit" class="btn btn-primary">Comprar</button>
+					</div>
 
 				</form>
 			</div>

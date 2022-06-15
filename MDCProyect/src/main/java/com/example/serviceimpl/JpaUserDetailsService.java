@@ -28,11 +28,12 @@ public class JpaUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Users usuario = userRepository.findByUsername(username);
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		
+		if(usuario == null) return new User("","", true, true, true, true, authorities);
+
 		for(Role role : usuario.getRoles()) {
 			authorities.add(new SimpleGrantedAuthority(role.getAuthority()));
 		}
-		
+
 		return new User(usuario.getUsername(), usuario.getPassword(), true, true, true, true, authorities);
 	}
 

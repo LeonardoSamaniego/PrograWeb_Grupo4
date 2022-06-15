@@ -30,5 +30,10 @@ public class MyProductServiceImpl implements MyProductService {
 	public void delete(long id) throws Exception {
 		myProductRepository.deleteById(id);
 	}
+	
+	@Override
+	public MyProduct findById(long id) throws Exception {
+		return myProductRepository.findById(id).get();
+	}
 
 }

@@ -23,28 +23,28 @@ public class Users implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name = "username", nullable = false, length = 100)
+
+	@Column(name = "username", nullable = false, length = 100, unique = true)
 	private String username;
 
-	@Column(name = "email", nullable = false, length = 100)
+	@Column(name = "email", nullable = false, length = 100, unique = true)
 	private String email;
 
 	@Column(name = "password", nullable = false, length = 100)
 	private String password;
 
-	@Column(name = "dni", nullable = false, length = 100)
+	@Column(name = "dni", nullable = false, length = 100, unique = true)
 	private String dni;
 
 	@Column(name = "name", nullable = false, length = 100)
 	private String name;
-	
+
 	@Column(name = "adress", nullable = false, length = 100)
 	private String adress;
-	
+
 	@Column(name = "type")
 	private int type;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")
 	private List<Role> roles;
@@ -120,6 +120,5 @@ public class Users implements Serializable {
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
-	
-	
+
 }

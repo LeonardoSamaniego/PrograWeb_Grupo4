@@ -5,9 +5,11 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 
 @Entity
@@ -15,9 +17,20 @@ import javax.persistence.Table;
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GenericGenerator(
+			name = "products-sequence-generator",
+			strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+			parameters = {
+					@Parameter(name = "sequence_name", value = "products_sequence"),
+					@Parameter(name = "initial_value", value = "100"),
+					@Parameter(name = "increment_size", value = "1")
+			})
+	
+	
+	@GeneratedValue(generator = "products-sequence-generator")
+	@Column(nullable=false, updatable=false)
 	private Long id;
 
 	@Column(name = "name", nullable = false, length = 50)
@@ -32,11 +45,11 @@ public class Product implements Serializable {
 	@Column(name = "size", nullable = false, length = 20)
 	private String size;
 	
-	@Column(name = "gen", nullable = false, length = 20)
-	private String gen;
+	@Column(name = "gender", nullable = false, length = 20)
+	private String gender;
 
-	@Column(name = "cate", nullable = false, length = 20)
-	private String cate;
+	@Column(name = "category", nullable = false, length = 20)
+	private String category;
 
 	@Column(name = "type", nullable = false, length = 20)
 	private String type;
@@ -88,19 +101,19 @@ public class Product implements Serializable {
 	}
 
 	public String getGen() {
-		return gen;
+		return gender;
 	}
 
 	public void setGen(String gen) {
-		this.gen = gen;
+		this.gender = gen;
 	}
 
 	public String getCate() {
-		return cate;
+		return category;
 	}
 
 	public void setCate(String cate) {
-		this.cate = cate;
+		this.category = cate;
 	}
 
 	public String getType() {

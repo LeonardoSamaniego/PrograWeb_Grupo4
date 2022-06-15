@@ -14,7 +14,7 @@ public interface ProductoService {
 
 	List<Product> findAll();
 
-	void delete(Long id);
+	String delete(Long id);
 
 	List<Product> findByName(String name);
 	

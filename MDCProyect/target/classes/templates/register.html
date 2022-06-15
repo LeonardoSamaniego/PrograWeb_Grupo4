@@ -24,30 +24,21 @@
 					placeholder="ejemplo@ejemplo.com" required th:field="*{email}">
 
 				<input type="text" id="fdni" name="fdni" placeholder="DNI" required
-					maxlength="8" th:field="*{dni}">
-				
-				<input type="password"
+					maxlength="8" th:field="*{dni}"> <input type="password"
 					id="fpassword" name="fpassword" placeholder="***********" required
-					th:field="*{password}">
-					
-				<input type="text" id="name"
+					th:field="*{password}"> <input type="text" id="name"
 					name="name" placeholder="Nombre Y Apellido" required
-					th:field="*{name}">
-					
-				<input type="text" id="adress"
+					th:field="*{name}"> <input type="text" id="adress"
 					name="adress" placeholder="Direccion" required th:field="*{adress}">
-
-				<label>Tipo usuario</label> <select class="form-control"
-					th:field="*{type}">
-					<option value="0">Cliente</option>
-					<option value="1">Administrador</option>
-				</select>
-
-				<button class="btn btn-primary" type="submit">Ingresar</button>
 				<br>
-				<a class="btn btn-secondary" th:href="@{/login}">Iniciar Sesion</a>
+				<div th:if="${mensaje}" class="alert alert-danger">
+					<p th:text="${mensaje}"></p>
+				</div>
+				<button class="btn btn-primary" type="submit">Ingresar</button>
+				<br> <a class="btn btn-secondary" th:href="@{/login}">Iniciar
+					Sesion</a>
 			</form>
-			
+
 		</div>
 	</div>
 </body>

@@ -34,8 +34,13 @@ public class ProductServiceImpl implements ProductoService {
 	}
 
 	@Override
-	public void delete(Long id){
-		this.productRepository.deleteById(id);
+	public String delete(Long id){
+		try {
+			this.productRepository.deleteById(id);
+		} catch (Exception e){
+			return e.getMessage();
+		}
+		return "Eliminado con exito el producto id:"+id;
 	}
 
 	@Override

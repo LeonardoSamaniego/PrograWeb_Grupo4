@@ -31,6 +31,10 @@ public class Purchase implements Serializable {
 
     @Column(name="amount", nullable = false)
     private Float amount;
+    
+	@ManyToOne
+	@JoinColumn(name = "idCard")
+	private Card card;
 
     @ManyToOne
     @JoinColumn(name = "User_id", nullable = false)
@@ -67,8 +71,23 @@ public class Purchase implements Serializable {
 		return user;
 	}
 
-	public void setUser(Users user) {
+	public Purchase setUser(Users user) {
 		this.user = user;
+		return this;
 	}
 
+	public Card getCard() {
+		return card;
+	}
+
+	public void setCard(Card card) {
+		this.card = card;
+	}
+
+	public Purchase() {
+		super();
+		card = new Card();
+	}
+
+	
 }

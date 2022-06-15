@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -21,6 +22,10 @@ public class MyProduct implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMyProduct;
 	
+	private int quantity;
+	
+	@Transient
+	private Float subtotal;
 	
 	@ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -65,4 +70,20 @@ public class MyProduct implements Serializable {
 		this.product = product;
 	}
 
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public Float getSubtotal() {
+		Float subtotalAux = quantity * product.getPrice();
+		return subtotalAux;
+	}
+
+	public void setSubtotal(Float subtotal) {
+		this.subtotal = subtotal;
+	}
 }

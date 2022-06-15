@@ -4,6 +4,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class LoginController {
 
@@ -13,12 +15,13 @@ public class LoginController {
 	}
 
 	@GetMapping("/logout")
-	public String logout() {
+	public String logout(HttpSession sesion) {
 		SecurityContextHolder.getContext().setAuthentication(null);
+		sesion.setAttribute("user", null);
 		return "login";
 	}
 
-	@GetMapping("/")
+	@GetMapping
 	public String irLogin() {
 		return "redirect:/login";
 	}

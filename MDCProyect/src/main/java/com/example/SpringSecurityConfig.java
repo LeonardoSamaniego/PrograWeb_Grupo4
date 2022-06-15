@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.serviceimpl.JpaUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -14,7 +15,7 @@ import com.example.auth.handler.LoginSucessHandler;
 
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
-	private com.example.serviceimpl.JpaUserDetailsService userDetailsService;
+	private JpaUserDetailsService userDetailsService;
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 	@Autowired
@@ -24,14 +25,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		try {
 			http.authorizeRequests()
 			.antMatchers("/user/**").permitAll()
-			.antMatchers("/home/**").access("hasRole('ROLE_USER')")
-			.antMatchers("/myProducts/**").access("hasRole('ROLE_USER')")
-			.antMatchers("/product/**").access("hasRole('ROLE_USER')")
-			.antMatchers("/purchase/**").access("hasRole('ROLE_USER')")
-			//.antMatchers("/ejemplo/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
-			.and().formLogin()
-			.successHandler(sucessHandler).loginPage("/login").loginProcessingUrl("/login")
-			.defaultSuccessUrl("/home").permitAll()
+			.antMatchers("/home/**").permitAll()
+			.antMatchers("/myProducts/**").permitAll()
+			.antMatchers("/product/**").permitAll()
+			.antMatchers("/purchase/**").permitAll()
+			.antMatchers("/admiHome/**").access("hasRole('ROLE_ADMIN')")
+			.and().formLogin().loginPage("/login")
+			.loginProcessingUrl("/login").permitAll()
+			.successHandler(sucessHandler)
 			.and().logout().logoutUrl("/logout").invalidateHttpSession(true).deleteCookies("JSESSIONID").permitAll()
 			.and().exceptionHandling().accessDeniedPage("/error_403");
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
 <head th:fragment="head(title)">
 <meta charset="UTF-8">
 <meta name="viewport"
@@ -19,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
+
 <body>
 	<header th:fragment="header">
 		<nav class="navbar navbar-expand-lg navbar-light"
@@ -26,16 +28,33 @@
 			<a class="navbar-brand" href="/">MDUC</a>
 			<div id="navbarNav">
 				<ul class="navbar-nav ">
-					<li class="nav-item active"><a class="nav-link"
+					<li th:if='${session.user != null && session.user.getType() == 0}'
+						class="nav-item active"><a class="nav-link"
 						th:href="@{/myProducts}">My Closet</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/home}">Products</a></li>
-					<li class="nav-item"><a class="nav-link"
-						th:href="@{/purchase}">Purchase</a></li>
-					<li sec:authorize="isAuthenticated()" class="nav-item"><a
+					<li th:if='${session.user != null && session.user.getType() == 0}'
+						class="nav-item"><a class="nav-link" th:href="@{/home}">Products</a></li>
+					<li th:if='${session.user != null && session.user.getType() == 0}'
+						class="nav-item"><a class="nav-link" th:href="@{/purchase}">Purchase</a></li>
+					<li th:if='${session.user != null && session.user.getType() == 0}'
+						class="nav-item active"><a class="nav-link"
+						th:href="@{/mail}">Contact</a></li>
+					<li th:if='${session.user != null && session.user.getType() == 0}'
+						class="nav-item active"><a class="nav-link"
+						th:href="@{/card}">Card</a></li>
+					<li th:if='${session.user != null && session.user.getType() == 1}'
+						class="nav-item active"><a class="nav-link"
+						th:href="@{/admin/addproduct}">Add a new product</a></li>
+					<li th:if='${session.user != null && session.user.getType() == 1}'
+						class="nav-item"><a class="nav-link"
+						th:href="@{/admin/addadmin}">Add a new admin</a></li>
+					<li th:if='${session.user == null}' class="nav-item"><a
+						class="nav-link" th:href="@{/login}">Login</a></li>
+					<li th:if='${session.user != null}' class="nav-item"><a
 						class="nav-link" th:href="@{/logout}">Logout</a></li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 </body>
+
 </html>

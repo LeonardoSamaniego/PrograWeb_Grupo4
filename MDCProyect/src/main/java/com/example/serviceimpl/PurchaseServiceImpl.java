@@ -14,20 +14,20 @@ public class PurchaseServiceImpl implements PurchaseService {
 
 	@Autowired
 	private PurchaseRepository purchaseRepository;
-	
+
 	@Override
-	public void insert(Purchase purchase) throws Exception{
-		purchaseRepository.save(purchase);
-	}
-	
-	@Override
-	public Purchase findById(long id) throws Exception{
+	public Purchase findById(long id) throws Exception {
 		return purchaseRepository.findById(id).get();
 	}
-	
+
 	@Override
-	public List<Purchase> findByUserId(long id) throws Exception{
+	public List<Purchase> findByUserId(long id) throws Exception {
 		return purchaseRepository.findByUserId(id);
 	}
-	
+
+	@Override
+	public Purchase insert(Purchase purchase) throws Exception {
+		return purchaseRepository.save(purchase);
+	}
+
 }
