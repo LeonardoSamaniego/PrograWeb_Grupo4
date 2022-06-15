@@ -14,8 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="purchasedetails")
-public class Purchasedetail implements Serializable {
+@Table(name="purchase_details")
+public class PurchaseDetail implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -44,7 +44,7 @@ public class Purchasedetail implements Serializable {
         return id;
     }
 
-    public Purchasedetail setId(Long id) {
+    public PurchaseDetail setId(Long id) {
         this.id = id;
         return this;
     }
@@ -53,7 +53,7 @@ public class Purchasedetail implements Serializable {
         return amount;
     }
 
-    public Purchasedetail setAmount(Float amount) {
+    public PurchaseDetail setAmount(Float amount) {
         this.amount = amount;
         return this;
     }
@@ -62,7 +62,7 @@ public class Purchasedetail implements Serializable {
         return igv;
     }
 
-    public Purchasedetail setIgv(Float igv) {
+    public PurchaseDetail setIgv(Float igv) {
         this.igv = igv;
         return this;
     }
@@ -71,7 +71,7 @@ public class Purchasedetail implements Serializable {
         return shipcost;
     }
 
-    public Purchasedetail setShipcost(Float shipcost) {
+    public PurchaseDetail setShipcost(Float shipcost) {
         this.shipcost = shipcost;
         return this;
     }
@@ -80,7 +80,7 @@ public class Purchasedetail implements Serializable {
         return product;
     }
 
-    public Purchasedetail setProduct(Product product) {
+    public PurchaseDetail setProduct(Product product) {
         this.product = product;
         return this;
     }
@@ -89,7 +89,7 @@ public class Purchasedetail implements Serializable {
         return purchase;
     }
 
-    public Purchasedetail setPurchase(Purchase purchase) {
+    public PurchaseDetail setPurchase(Purchase purchase) {
         this.purchase = purchase;
         return this;
     }

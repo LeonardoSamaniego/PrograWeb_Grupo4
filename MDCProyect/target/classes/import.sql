@@ -1,5 +1,19 @@
-INSERT INTO products (name, size, price, url, type, id, brand, cate, color, gen)VALUES ('CONJUNTO DE INVIERNO CASUAL', 'L', 300, '/recursos/Imagenes/7.png', 'CONJUNTO', 1, 'H Y M', 'INVIERNO', 'AZUL', 'MEN');
+INSERT INTO products (name, size, price, url, type, brand, category, color, gender,id)VALUES
+    ('CONJUNTO DE INVIERNO CASUAL', 'L', 300, 'https://i.postimg.cc/GpLtnt1R/7.png',
+     'CONJUNTO', 'H Y M', 'INVIERNO', 'BLUE', 'MEN',1);
+INSERT INTO products (name, size, price, url, type, brand, category, color, gender,id)VALUES
+    ('CONJUNTO DE OTOﾃ前 BLANCO CASUAL', 'M', 200, 'https://i.postimg.cc/CKc1h0Fq/12.png',
+     'CONJUNTO', 'BASEMENT', 'OTOﾃ前', 'WHITE', 'MEN',2);
+INSERT INTO products (name, size, price, url, type, brand, category, color, gender,id)VALUES
+    ('CONJUNTO NEGRO SPORT ELEGANTE', 'L', 250, 'https://i.postimg.cc/C1dKd216/10.png',
+     'CONJUNTO', 'ZARA', 'PRIMAERA', 'BLACK', 'MEN',3);
+INSERT INTO products (name, size, price, url, type, brand, category, color, gender,id)VALUES
+('CONJUNTO DE OTOﾃ前 BLANCO CASUAL', 'M', 600, 'https://i.postimg.cc/CKc1h0Fq/12.png',
+ 'CONJUNTO', 'BASEMENT', 'OTOﾃ前', 'PURPLE', 'MEN',6),
+('CONJUNTO DE OTOﾃ前 BLANCO CASUAL', 'M', 400, 'https://i.postimg.cc/CKc1h0Fq/12.png',
+ 'CONJUNTO', 'BASEMENT', 'OTOﾃ前', 'BROWN', 'MEN',7),
+('CONJUNTO DE OTOﾃ前 BLANCO CASUAL', 'M', 500, 'https://i.postimg.cc/CKc1h0Fq/12.png',
+ 'CONJUNTO', 'BASEMENT', 'OTOﾃ前', 'GREEN', 'MEN',8),
+('CONJUNTO DE OTOﾃ前 BLANCO CASUAL', 'M', 300, 'https://i.postimg.cc/CKc1h0Fq/12.png',
+ 'CONJUNTO', 'BASEMENT', 'OTOﾃ前', 'YELLOW', 'MEN',9);
 
-INSERT INTO products (name, size, price, url, type, id, brand, cate, color, gen)VALUES ('CONJUNTO DE OTOﾑO BLANCO CASUAL', 'M', 200, '/recursos/Imagenes/12.png', 'CONJUNTO', 2, 'BASEMENT', 'OTOﾑO', 'BLANCO', 'MEN');
-
-INSERT INTO products (name, size, price, url, type, id, brand, cate, color, gen)VALUES ('CONJUNTO NEGRO SPORT ELEGANTE', 'L', 250, '/recursos/Imagenes/10.png', 'CONJUNTO', 3, 'ZARA', 'PRIMAERA', 'NEGRO', 'MEN');

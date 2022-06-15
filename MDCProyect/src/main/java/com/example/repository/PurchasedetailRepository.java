@@ -1,7 +1,9 @@
 package com.example.repository;
-import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.entities.Purchasedetail;
 
-public interface PurchasedetailRepository  extends JpaRepository<Purchasedetail, Long> {
+import com.example.entities.PurchaseDetail;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PurchaseDetailRepository extends JpaRepository<PurchaseDetail, Long>{
 
 }
